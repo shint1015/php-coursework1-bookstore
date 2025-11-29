@@ -1,0 +1,14 @@
+### What is nonrepudiation in the context of digital systems?
+By logging user actions, the user cannot deny having performed those actions later.
+These logs store about what action was taken, when, and by whom.
+
+### Why is it important for applications like online bookstores?
+To ensure accountability and trust, preventing disputes over transactions or actions taken by users.
+For example, it prevent a user from scamming the bookstore by denying they added a book or made a purchase.
+Furthermore, it is effective for tracking responsibility in supply chains and inventory updates, and also aids in detecting internal fraud. Moreover, it helps in auditing and resolving conflicts.
+
+### What other tools/technologies besides logging can help achieve nonrepudiation?
+Blockchain technology for immutable records.
+Blockchain can provide a tamper-proof ledger of transactions, ensuring that once an action is recorded, it cannot be altered or deleted, thus enhancing nonrepudiation.
+Digital signatures to verify the authenticity of actions.
+Digital signatures can ensure that actions taken by users are verifiable and cannot be repudiated, as they provide proof of origin and integrity of the data associated with the action.

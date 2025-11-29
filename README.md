@@ -15,8 +15,7 @@ A simple PHP bookstore using arrays for inventory, a discount function (10% off 
 5. Open: http://localhost/bookstore/index.php
 6. Use the form to add books; Science Fiction gets 10% off and additions are logged.
 
-Notes:
+### Notes:
 
 -   Inventory is in index.php (array; no DB/JSON persistence required).
 -   Styling: style.css; Essay: nonrepudiation_essay.txt.
-# php-coursework1-bookstore
