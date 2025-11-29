@@ -46,14 +46,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
+
+$discounts = [
+    'Science Fiction' => 0.10, // 10%
+    'Fantasy'         => 0.05, // 5%
+];
+
 // Total
 $total = 0.0;
 foreach ($books as $b) {
-    if (($b['genre'] ?? '') === 'Science Fiction') {
-            $total += round(((float)$b['price']) * 0.90, 2); // 10% off
-    } else {
-        $total += (float)$b['price'];
-    }
+    $genre = $b['genre'] ?? '';
+    $price = (float)($b['price'] ?? 0);
+    $rate  = $discounts[$genre] ?? 0.0;
+    $total += round($price * (1.0 - $rate), 2);
 }
 
 // Output
@@ -91,6 +96,9 @@ echo '<h3>Request Info</h3>';
 echo '<p>Request time: ' . htmlspecialchars($now, ENT_QUOTES, 'UTF-8') . '<br>';
 echo 'IP: ' . htmlspecialchars($ip, ENT_QUOTES, 'UTF-8') . '<br>';
 echo 'User agent: ' . htmlspecialchars($ua, ENT_QUOTES, 'UTF-8') . '</p>';
+
+echo '<h3>Log Viewer</h3>';
+echo logViewerHtml();
 ?>
 
 </body>

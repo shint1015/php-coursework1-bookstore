@@ -47,3 +47,19 @@ function makeListHtml(array|null $data): string {
     $table .= "</tbody></table>";
     return $table;
 }
+
+function logViewerHtml(): string {
+    $content = "";
+    $logFile = __DIR__ . '/bookstore_log.txt';
+    if (is_readable($logFile)) {
+        $logContent = file_get_contents($logFile);
+        if ($logContent === false || $logContent === '') {
+            $content .= '<p class="info">Log is empty.</p>';
+        } else {
+            $content .= '<pre class="info" style="white-space:pre-wrap;">' . htmlspecialchars($logContent, ENT_QUOTES, 'UTF-8') . '</pre>';
+        }
+    } else {
+        $content .= '<p class="info">Log file not found or not readable. Please create bookstore_log.txt and ensure read permissions.</p>';
+    }
+    return $content;
+}
